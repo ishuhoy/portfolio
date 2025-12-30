@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Ishaan Chahar | MERN Stack Developer | Tata Advanced Systems Intern | Full-stack JavaScript expert from Delhi" />
+  <title>Ishaan Chahar | MERN Stack Developer</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0c0c1a 0%, #1a1a2e 50%, #16213e 100%);
+      color: #e2e8f0;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(30, 64, 175, 0.95));
+      overflow: hidden;
+    }
+
+    .hero-wrapper {
+      max-width: 1100px;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      z-index: 2;
+    }
+
+    .hero-content {
+      flex: 1 1 320px;
+      text-align: left;
+    }
+
+    .hero-photo {
+      flex: 0 0 230px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-photo img {
+      width: 220px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 3px solid rgba(148, 163, 184, 0.7);
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.8);
+      background: #0f172a;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      background: linear-gradient(45deg, #60a5fa, #a78bfa, #f472b6);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 3s ease infinite;
+      margin-bottom: 10px;
+    }
+
+    @keyframes gradientShift {
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .typewriter {
+      font-size: 1.1rem;
+      color: #bfdbfe;
+      margin-bottom: 18px;
+      overflow: hidden;
+      border-right: 3px solid #60a5fa;
+      white-space: nowrap;
+      animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink-caret {
+
+      from,
+      to {
+        border-color: transparent;
+      }
+
+      50% {
+        border-color: #60a5fa;
+      }
+    }
+
+    .hero-summary {
+      font-size: 0.98rem;
+      color: #e5e7eb;
+      margin-bottom: 22px;
+      max-width: 620px;
+    }
+
+    .hero-summary strong {
+      color: #f9fafb;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 26px;
+      border: none;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+      color: white;
+      box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #e5e7eb;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.5);
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    h2 {
+      font-size: 2.1rem;
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+      color: #60a5fa;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #60a5fa, #a78bfa);
+      border-radius: 2px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      padding: 26px;
+      border-radius: 20px;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #60a5fa, #a78bfa);
+      transform: scaleX(0);
+      transition: transform 0.35s ease;
+    }
+
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.7);
+      border-color: rgba(96, 165, 250, 0.6);
+    }
+
+    .timeline-badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: linear-gradient(135deg, #60a5fa, #a78bfa);
+      color: white;
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      box-shadow: 0 4px 14px rgba(96, 165, 250, 0.55);
+    }
+
+    .card h3 {
+      color: #e5e7eb;
+      margin-bottom: 18px;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* ==== TECHNICAL SKILLS SECTION BACKGROUND ==== */
+
+    #skills {
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at top left, #1d283a 0%, #020617 60%);
+    }
+
+    #skills::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(90deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    #skills>* {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Floating tech icons row */
+    .skills-float-row {
+      position: relative;
+      margin: 0 auto 30px auto;
+      max-width: 600px;
+      height: 40px;
+      overflow: hidden;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    .float-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 28px;
+      width: auto;
+      filter: drop-shadow(0 0 8px rgba(15, 23, 42, 0.8));
+    }
+
+    .float-icon-1 {
+      animation: float-horizontal 16s linear infinite;
+      animation-delay: 0s;
+    }
+
+    .float-icon-2 {
+      animation: float-horizontal 20s linear infinite;
+      animation-delay: -5s;
+    }
+
+    .float-icon-3 {
+      animation: float-horizontal 24s linear infinite;
+      animation-delay: -10s;
+    }
+
+    @keyframes float-horizontal {
+      0% {
+        left: -60px;
+      }
+
+      100% {
+        left: 100%;
+      }
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .skill-tag {
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 25px;
+      text-align: center;
+      font-weight: 500;
+      border: 1px solid rgba(96, 165, 250, 0.4);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      font-size: 0.9rem;
+      padding: 12px 18px;
+    }
+
+    .skill-tag:hover {
+      background: rgba(15, 23, 42, 1);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(96, 165, 250, 0.35);
+    }
+
+    /* ICON SUPPORT FOR SKILLS */
+    .skill-tag-icon {
+      background-repeat: no-repeat;
+      background-position: 10px center;
+      background-size: 20px 20px;
+      padding-left: 40px;
+    }
+
+    /* update paths to match your actual files in /icons */
+    .skill-react {
+      background-image: url("icons/react.png");
+    }
+
+    .skill-node {
+      background-image: url("icons/node.png");
+    }
+
+    .skill-express {
+      background-image: url("icons/express.png");
+    }
+
+    .skill-mongo {
+      background-image: url("icons/mongo.png");
+    }
+
+    .skill-java {
+      background-image: url("icons/java.png");
+    }
+
+    .skill-dsa {
+      background-image: url("icons/js.png");
+    }
+
+    .skill-js {
+      background-image: url("icons/javascript.png");
+    }
+
+    .skill-redux {
+      background-image: url("icons/redux.png");
+    }
+
+    .skill-rest {
+      background-image: url("icons/rest.png");
+    }
+
+    .skill-html {
+      background-image: url("icons/html.png");
+    }
+
+    .cert-list {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .cert-list li {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .cert-list a {
+      color: #93c5fd;
+      text-decoration: none;
+    }
+
+    .cert-list a:hover {
+      text-decoration: underline;
+    }
+
+    .edu-meta {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      margin-bottom: 6px;
+    }
+
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .contact-item {
+      padding: 26px;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 15px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 32px rgba(15, 23, 42, 0.6);
+    }
+
+    .contact-item i {
+      font-size: 1.8rem;
+      color: #60a5fa;
+      margin-bottom: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      background: rgba(2, 6, 23, 0.95);
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        text-align: center;
+      }
+
+      .hero-wrapper {
+        flex-direction: column;
+      }
+
+      .hero-content {
+        text-align: center;
+      }
+
+      .hero-summary {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-badge {
+        position: static;
+        margin-bottom: 10px;
+        display: inline-block;
+      }
+    }
+  </style>
+
+
+
+</head>
+
+<body>
+  <canvas id="particles"></canvas>
+
+  <!-- HERO + PHOTO + BIG SUMMARY -->
+  <header>
+    <div class="hero-wrapper" data-aos="fade-up" data-aos-duration="1000">
+      <div class="hero-photo" data-aos="fade-right" data-aos-delay="150">
+        <!-- IMPORTANT: image file must be in same folder as index.html -->
+        <img src="C:\Users\msi\OneDrive\Desktop\portfolio\images\passport photo.jpg" alt="Ishaan Chahar Portrait">
+      </div>
+      <div class="hero-content">
+        <h1 data-aos="fade-down" data-aos-delay="200">Ishaan Chahar</h1>
+        <p class="typewriter" data-aos="fade-up" data-aos-delay="400">MERN Stack Developer</p>
+        <p class="hero-summary" data-aos="fade-up" data-aos-delay="550">
+          <strong>Full‑Stack Software Engineer</strong> specializing in Node.js, Express.js, React.js, and MongoDB, with
+          a strong focus on building scalable, high‑performance web applications that improve user experience and
+          business efficiency.
+          Proven track record of developing enterprise solutions with a focus on HTML, CSS, JavaScript and
+          React technologies, translating complex business requirements into efficient technical solutions
+          while maintaining high standards for code quality and performance optimization.
+        </p>
+        <div class="hero-buttons" data-aos="fade-up" data-aos-delay="750">
+          <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
+          <a href="#contact" class="btn btn-secondary"><i class="fas fa-envelope"></i> Hire Me</a>
+          <a href="https://drive.google.com/file/d/1NGnKif6BBPBDiZqm2Qz3TQ6ajH1mKiyS/view?usp=sharing" target="_blank"
+            class="btn btn-secondary"><i class="fas fa-file-download"></i> Download Resume</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- EDUCATION (before internships) -->
+  <section id="education">
+    <h2 data-aos="fade-up">Education</h2>
+    <div class="card-grid">
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <div class="timeline-badge">2022 - 2024</div>
+        <h3><i class="fas fa-graduation-cap"></i> M.Tech – Information Technology</h3>
+        <p class="edu-meta">University School of Information, Communication and Technology, IP University · CGPA 8.15
+        </p>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="250">
+        <div class="timeline-badge">2018 - 2022</div>
+        <h3><i class="fas fa-university"></i> B.Tech – Computer Science Engineering</h3>
+        <p class="edu-meta">Amity University · CGPA 7.29</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNSHIPS -->
+  <section id="internships">
+    <h2 data-aos="fade-up">Internship Experience</h2>
+    <div class="card-grid">
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <div class="timeline-badge">Feb 2024 - May 2024</div>
+        <h3><i class="fas fa-building"></i> Tata Advanced Systems</h3>
+        <ul>
+          <li>Led development of responsive user interfaces using React.js for web and mobile experiences.</li>
+          <li>Optimized components using Redux/Context and performance techniques like code splitting and lazy loading.
+          </li>
+          <li>Integrated RESTful APIs with the frontend to enable efficient, real‑time data flow.</li>
+          <li>Collaborated with cross‑functional teams and participated in peer code reviews to maintain code quality.
+          </li>
+        </ul>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <div class="timeline-badge">Sep 2025 - Dec 2025</div>
+        <h3><i class="fas fa-laptop-code"></i> Datatech Alpha</h3>
+        <ul>
+          <li>Trained extensively on MongoDB, Express.js, React.js, and Node.js in a structured MERN program.</li>
+          <li>Built a basic e‑commerce application with end‑to‑end flows, from APIs to React UI.</li>
+          <li>Practiced industry‑style version control, debugging, and deployment workflows.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2 data-aos="fade-up">Featured Projects</h2>
+    <div class="card-grid">
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <h3><i class="fas fa-shopping-cart"></i> E‑commerce API</h3>
+        <ul>
+          <li>Improved website performance by 20% and reduced system errors by 98% through robust testing and debugging.
+          </li>
+          <li>Delivered in 10 days in collaboration with cross‑functional teams, ensuring smooth integration.</li>
+          <li>Designed scalable APIs for product, order, and user management for high‑traffic scenarios.</li>
+        </ul>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <h3>
+          <i class="fas fa-users"></i>
+          Instagram Clone (MERN)
+          &nbsp; &rarr;
+          <a href="https://instaclonemern-gamma.vercel.app" target="_blank" rel="noopener noreferrer">
+            Live Demo
+          </a>
+        </h3>
+        <ul>
+          <li>Deployed full‑stack Instagram‑style app with React on Vercel and Node/Express + MongoDB API on Render.
+          </li>
+          <li>Implemented auth, posting, likes, and live search of registered users with a responsive,
+            Instagram‑inspired UI.</li>
+        </ul>
+      </div>
+
+      <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <h3><i class="fas fa-share-alt"></i> Social Media API</h3>
+        <ul>
+          <li>Developed RESTful APIs with JWT‑based authentication and authorization.</li>
+          <li>Modeled data with Mongoose to support posts, likes, and comments robustly.</li>
+          <li>Followed best practices for error handling, validation, and clean architecture.</li>
+        </ul>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="400">
+        <h3><i class="fas fa-music"></i> Music Player Web Application</h3>
+        <ul>
+          <li>Responsive music player built with HTML and CSS supporting smooth playback and navigation.</li>
+          <li>Focused on minimal, aesthetic UI and seamless user experience.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2 data-aos="fade-up">Technical Skills</h2>
+    <!-- Animated tech icons background row -->
+    <div class="skills-float-row">
+      <img src="icons/html.png" alt="HTML" class="float-icon float-icon-1">
+      <img src="icons/react.png" alt="React" class="float-icon float-icon-2">
+      <img src="icons/node.png" alt="Node.js" class="float-icon float-icon-3">
+    </div>
+    <div class="skills-grid">
+      <div class="skill-tag skill-tag-icon skill-react" data-aos="zoom-in" data-aos-delay="100">React.js</div>
+      <div class="skill-tag skill-tag-icon skill-node" data-aos="zoom-in" data-aos-delay="200">Node.js</div>
+      <div class="skill-tag skill-tag-icon skill-express" data-aos="zoom-in" data-aos-delay="300">Express.js</div>
+      <div class="skill-tag skill-tag-icon skill-mongo" data-aos="zoom-in" data-aos-delay="400">MongoDB</div>
+      <div class="skill-tag skill-tag-icon skill-java" data-aos="zoom-in" data-aos-delay="500">Java</div>
+      <div class="skill-tag skill-tag-icon skill-dsa" data-aos="zoom-in" data-aos-delay="600">Data Structures and
+        Algorithms</div>
+      <div class="skill-tag skill-tag-icon skill-js" data-aos="zoom-in" data-aos-delay="700">JavaScript</div>
+      <div class="skill-tag skill-tag-icon skill-redux" data-aos="zoom-in" data-aos-delay="800">Redux</div>
+      <div class="skill-tag skill-tag-icon skill-rest" data-aos="zoom-in" data-aos-delay="900">RESTful APIs</div>
+      <div class="skill-tag skill-tag-icon skill-html" data-aos="zoom-in" data-aos-delay="1000">HTML5 / CSS3 / Bootstrap
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <h2 data-aos="fade-up">Certifications</h2>
+    <div class="card-grid">
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <h3><i class="fas fa-code"></i> Front‑End Development</h3>
+        <ul class="cert-list">
+          <li>Front End Certificate – Completed front‑end course and project using HTML, CSS, and JavaScript.</li>
+          <li><a href="https://certificate.codingninjas.com/view/764feabbc386282d" target="_blank">View Certificate
+              (Link)</a></li>
+        </ul>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <h3><i class="fas fa-server"></i> Back‑End Development</h3>
+        <ul class="cert-list">
+          <li>Back End Certificate – Completed back‑end development using Node.js, Express, and MongoDB with multiple
+            projects.</li>
+          <li><a href="https://certificate.codingninjas.com/view/8787e8e090277b1f" target="_blank">View Certificate
+              (Link)</a></li>
+        </ul>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <h3><i class="fab fa-react"></i> React.js & JavaScript</h3>
+        <ul class="cert-list">
+          <li>React.js Certificate – Built responsive web applications with modern React patterns.</li>
+          <li>JavaScript Certificate – Completed in‑depth course covering core language features and advanced concepts.
+          </li>
+          <li><a href="https://drive.google.com/file/d/1Ez00vFMcNnfYEXhOa6vBQTaxNU-rKghH/view?pli=1"
+              target="_blank">View Certificates (Links)</a></li>
+        </ul>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="400">
+        <h3><i class="fas fa-database"></i> SQL & IoT</h3>
+        <ul class="cert-list">
+          <li>Basic SQL Certificate – Gained foundational proficiency in SQL and relational databases.</li>
+          <li>IoT Certificate – Completed course on Internet of Things concepts and applications.</li>
+          <li><a href="https://drive.google.com/file/d/1FTZF_Nx2i5omsRO0znNDb6Z0ehkK4Cyn/view" target="_blank">View
+              Certificates (Links)</a></li>
+        </ul>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="500">
+        <h3><i class="fab fa-react"></i> Tata Adv Systems Ltd.</h3>
+        <ul class="cert-list">
+          <li>Internship Completion Certificate.</li>
+          <li><a href="https://drive.google.com/file/d/1DbFkIelAPbGu9PKpmzDmjjh75j-J6TNK/view" target="_blank">View
+              Certificate (Link)</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <h2 data-aos="fade-up">Achievements</h2>
+    <div class="card-grid">
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <h3><i class="fas fa-trophy"></i> Leadership & Collaboration</h3>
+        <ul>
+          <li>Took initiative in coordinating team-based academic and project activities, ensuring timely completion and
+            effective collaboration among peers.</li>
+        </ul>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="250">
+        <h3><i class="fas fa-plane-departure"></i> AFCAT 2/2024</h3>
+        <ul>
+          <li>Cleared AFCAT (Air Force Common Admission Test) 2/2024 written examination.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 data-aos="fade-up">Get In Touch</h2>
+    <div class="contact-info">
+      <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-phone"></i>
+        <h3>+91 9773756934</h3>
+        <p>Available for calls</p>
+      </div>
+      <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-envelope"></i>
+        <h3>ishaanchahar15@gmail.com</h3>
+        <p>Response within 24h</p>
+      </div>
+      <div class="contact-item" data-aos="fade-up" data-aos-delay="300">
+        <i class="fab fa-linkedin"></i>
+        <h3>LinkedIn</h3>
+        <a href="https://www.linkedin.com/in/ishaan-chahar-593825172" target="_blank">Connect Now</a>
+      </div>
+      <!-- NEW: Download Resume -->
+      <div class="contact-item" data-aos="fade-up" data-aos-delay="400">
+        <i class="fas fa-file-download"></i>
+        <h3>Download Resume</h3>
+        <a href="https://drive.google.com/file/d/1NGnKif6BBPBDiZqm2Qz3TQ6ajH1mKiyS/view?usp=sharing" target="_blank"
+          download>Download PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <footer data-aos="fade-up">
+    <p>© 2025 Ishaan Chahar | Built with ❤️ for the web</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 1000, once: true });
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) target.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      const canvas = document.getElementById('particles');
+      const ctx = canvas.getContext('2d');
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resizeCanvas();
+
+      const particles = [];
+      for (let i = 0; i < 80; i++) {
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          radius: Math.random() * 2 + 1
+        });
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'rgba(96, 165, 250, 0.08)';
+        particles.forEach(p => {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fill();
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+        });
+        requestAnimationFrame(animate);
+      }
+      animate();
+
+      window.addEventListener('resize', resizeCanvas);
+    });
+  </script>
+</body>
+
+</html>
